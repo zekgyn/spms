@@ -74,6 +74,7 @@ include("inc/connect.php");
                 <th>Emp_Fname</th>
                 <th>Emp_Lname</th>
                 <th>Emp_Email</th>
+                <th>Emp_Phone</th>
                 <th>DOB</th>
                 </tr>
                 </thead>
@@ -85,14 +86,16 @@ include("inc/connect.php");
                   $field3name = $row[2];
                   $field4name = $row[5];
                   $field5name = $row[4];
+                  $field6name = $row[7];
 
 
                   echo
                   '<tr>
-                  <td>'.'202009'.$field1name.'</td>
+                  <td><a href="http://202009'.$field1name.'">'.'202009'.$field1name.'</a></td>
                   <td>'.$field2name.'</td>
                   <td>'.$field3name.'</td>
-                  <td>'.$field4name.'</td>
+                  <td><a href="mailto:'.$field4name.'">'.$field4name.'</a></td>
+                  <td><a href="tel:'.$field6name.'">'.$field6name.'</a></td>
                   <td>'.$field5name.'</td>
                   </tr>';
                 }

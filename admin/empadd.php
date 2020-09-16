@@ -63,11 +63,11 @@ include("inc/connect.php");
             <div class="col-md-8 order-md-1">
                   <h4 class="mb-3"></h4>
                   <form class="needs-validation" action="" method="post" >
-                    <div class="row">
 
+                    <div class="row">
                       <div class="col-md-6 mb-3">
                         <label for="firstName">First name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Firsname" required>
+                        <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Firsname" required data-error="Please enter your full name.">
                         <div class="invalid-feedback">
                           First name is required.
                         </div>
@@ -81,17 +81,29 @@ include("inc/connect.php");
                       </div>
                     </div>
 
-                    <div class="mb-3">
-                      <label for="email">Email <span class="text-muted"></span></label>
-                      <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
-                      <div class="invalid-feedback">
-                        Please enter a valid email address.
+
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="firstName">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                        <div class="invalid-feedback">
+                          Email is required.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="lastName">Phone number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="zip-123-456-789-" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{3}" required>
+                        <div class="invalid-feedback">
+                          Phone number is required.
+                        </div>
                       </div>
                     </div>
+
                     <div class="mb-3">
                       <label for="username">Password</label>
                       <div class="input-group">
-                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         <div class="invalid-feedback" style="width: 100%;">
                           Your Password is required.
                         </div>
@@ -110,6 +122,8 @@ include("inc/connect.php");
                                     </div>
                                 </div>
                             </div>
+
+
 
 
                     <div class="mb-3">
@@ -169,39 +183,38 @@ include("inc/connect.php");
                   </form>
 
 <?php
-if (!isset($_POST['empadd'])) {
-  echo "Something is wrong";
-}
-
-  else {
-    $fname=$_POST['firstname'];
-    $lname=$_POST['lastname'];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    $dob=$_POST['birthday'];
-    $address=$_POST['address'];
-    $country=$_POST['country'];
-    $region=$_POST['region'];
-    $gender=$_POST['gender'];
-
-
-    $sql="INSERT INTO `employees` (`emp_fname`, `emp_lname`, `emp_gender`, `emp_dob`, `emp_email`, `emp_password`, `emp_address`, `emp_country`, `emp_region`)VALUES ($fname, $lname, $gender, $dob, $email, MD5($password), $address, $country, $region)";
-    if ($query=mysqli_query($conn,$sql)) {
-      echo "Successfully added new Employee";
-    }
-
-  }
+if (isset($_POST['submit'])) {
+      $fname=mysqli_real_escape_string($conn, $_POST['firstname']);
+      $lname=mysqli_real_escape_string($conn, $_POST['lastname']);
+      $email=mysqli_real_escape_string($conn, $_POST['email']);
+      $password=mysqli_real_escape_string($conn, $_POST['password']);
+      $dob=mysqli_real_escape_string($conn, $_POST['birthday']);
+      $address=mysqli_real_escape_string($conn, $_POST['address']);
+      $country=mysqli_real_escape_string($conn, $_POST['country']);
+      $region=mysqli_real_escape_string($conn, $_POST['region']);
+      $gender=mysqli_real_escape_string($conn, $_POST['gender']);
+      $region=trim($region);
+$password=md5($password);
+      $sql="INSERT INTO `employees` (`emp_fname`, `emp_lname`, `emp_gender`, `emp_dob`, `emp_email`, `emp_password`, `emp_address`, `emp_country`, `emp_region`)
+            VALUES ('$fname', '$lname', '$gender', '$dob', '$email', '$password', '$address', '$country', '$region')";
+                  if (mysqli_query($conn,$sql)) {
+                    echo '<div class="alert alert-success alert-dismissible">
+                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                          <strong>Good news!</strong> User added successfully.
+                          </div>';
+                  }
 
 
+                  else {
+                    print ('<div class="alert alert-danger alert-dismissible">
+                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                          <strong>Danger!</strong> Failed to add Employee.<br>'.mysqli_error($conn).'
+                          </div>');
 
-
-
+                  }
+      	}
 
  ?>
-
-
-
-
 
                 </div>
                 <!-- Add Employee End-->

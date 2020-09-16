@@ -62,42 +62,12 @@ include("inc/connect.php");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <div class="alert alert-warning">
+    <div class="alert alert-info">
      <span>
      <strong>Instructions:</strong><br>
 <i>Search for a user to start evaluating them.</i>
    </span>
      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 <div class="col-md-8 order-md-1">
@@ -107,7 +77,7 @@ include("inc/connect.php");
 
                           <div class="col-md-6 mb-3">
                             <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Firsname" required>
+                            <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Firsname" required data-error="Please enter your full name.">
                             <div class="invalid-feedback">
                               First name is required.
                             </div>

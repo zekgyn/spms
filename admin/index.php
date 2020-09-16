@@ -52,11 +52,6 @@ include 'inc/connect.php';
 				<input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address"  autofocus>
 				<label for="inputPassword" class="sr-only">Password</label>
 				<input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" >
-				<div class="checkbox mb-3">
-					<label>
-						<input type="checkbox" name="armb" value="remember-me"> Remember me
-					</label>
-				</div>
 				<button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
 			</form>
 <?php
