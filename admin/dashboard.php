@@ -34,8 +34,8 @@ include("inc/connect.php");
 
       <!-- Right side main-->
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <div class="mb-3 d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <div class="d-flex justify-content-center flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3">
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search"  name="searchable" placeholder="Search" aria-label="Search">
               <input class="btn btn-outline-primary my-2 my-sm-0"  name="search" type="submit" value="Search"></input>
@@ -60,7 +60,7 @@ include("inc/connect.php");
             $sql="SELECT * FROM employees";
             $query=mysqli_query($conn,$sql);
             ?>
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-centre pt-3 pb-2 mb-3">
+            <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-centre pt-3 pb-2 mb-3">
                 <h4><b>List of Employee</b></h4>
             </div>
 
@@ -76,6 +76,9 @@ include("inc/connect.php");
                 <th>Emp_Email</th>
                 <th>Emp_Phone</th>
                 <th>DOB</th>
+                <th></th>
+                <th></th>
+                <th></th>
                 </tr>
                 </thead>
                 <tbody>';
@@ -86,17 +89,20 @@ include("inc/connect.php");
                   $field3name = $row[2];
                   $field4name = $row[5];
                   $field5name = $row[4];
-                  $field6name = $row[7];
+                  $field6name = $row[6];
 
 
                   echo
                   '<tr>
-                  <td><a href="http://202009'.$field1name.'">'.'202009'.$field1name.'</a></td>
+                  <td>'.$field1name.'</td>
                   <td>'.$field2name.'</td>
                   <td>'.$field3name.'</td>
                   <td><a href="mailto:'.$field4name.'">'.$field4name.'</a></td>
                   <td><a href="tel:'.$field6name.'">'.$field6name.'</a></td>
                   <td>'.$field5name.'</td>
+                  <td><a href="empeval.php?id='.$field1name.'" class="text-white"><button class="btn btn-success btn-sm">Evaluate</button></a></td>
+                  <td><a href="empreport.php?id='.$field1name.'" class="text-white"><button class="btn btn-primary btn-sm">Report</button></a></td>
+                  <td><a href="delete.php?id='.$field1name.'" class="text-white"><button class="btn btn-danger btn-sm">Delete</button></a></td>
                   </tr>';
                 }
                 echo '</tbody>
@@ -112,16 +118,6 @@ include("inc/connect.php");
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
   <footer class="my-5 pt-5 text-muted text-center text-small">
   <p class="mb-1">&copy; 2017-2020 Company Name</p>
   <ul class="list-inline">
@@ -132,8 +128,8 @@ include("inc/connect.php");
 </footer>
 </div>
 
-        <script src="js\jquery-3.5.1.min.js"></script>
-        <script src="bootstrap.min.js"></script>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
 
 

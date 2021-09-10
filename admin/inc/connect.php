@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","missdee","31k1kk12c6cMissdee@10","spms");
+$conn = mysqli_connect("localhost","root","12345","signwhouse");
 // Check connection
 if (mysqli_connect_error())
   {

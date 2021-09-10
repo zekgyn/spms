@@ -3,7 +3,7 @@ session_start();
 include 'inc/connect.php';
 
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -49,9 +49,9 @@ include 'inc/connect.php';
 					<br><br><br><br>
 				<h1 class="h3 mb-3 font-weight-normal">Admin Logn In</h1><br><br>
 				<label for="inputEmail" class="sr-only">Email address</label>
-				<input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address"  autofocus>
+				<input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address"  required autofocus>
 				<label for="inputPassword" class="sr-only">Password</label>
-				<input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" >
+				<input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
 				<button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
 			</form>
 <?php

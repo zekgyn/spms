@@ -56,7 +56,7 @@ include("inc/connect.php");
 
       <!-- Search one employee End-->
     <!-- Add an Employee-->
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-centre pt-3 pb-2 mb-3 border-bottom">
+    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
           <h4><b>Employee Evaluation</b></h4>
     </div>
 
@@ -70,235 +70,18 @@ include("inc/connect.php");
      </div>
 
 
-                <div class="col-md-8 order-md-1">
-                      <h4 class="mb-3"></h4>
+
+    <!-- <div class="container-fluid">
+       ...
+     </div>-->
+                <div class="container-fluid"><!--d-flex justify-content-center col-md-8 order-md-1 -->
+                  <div class="d-flex justify-content-center flex-wrap flex-md-nowrap mb-3 border-bottom">
+                        <h5><strong>Productivity</strong></h5>
+                  </div>
 
 
 
                       <form class="needs-validation" action="" method="post">
-
-          <table class="table table-striped table-sm">
-            <tr class="form-matrix-tr form-matrix-header-tr">
-              <th class="form-matrix-th" style="border:none">
-
-              </th>
-              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_0">
-                <label id="label_14_col_0"> Very Poor </label>
-              </th>
-              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_1">
-                <label id="label_14_col_1"> Not Satisfactory </label>
-              </th>
-              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_2">
-                <label id="label_14_col_2"> Average </label>
-              </th>
-              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_3">
-                <label id="label_14_col_3"> Satisfactory </label>
-              </th>
-              <th scope="col" class="form-matrix-headers form-matrix-column-headers form-matrix-column_4">
-                <label id="label_14_col_4"> Excellent </label>
-              </th>
-            </tr>
-            <tr class="form-matrix-tr form-matrix-value-tr" role="group" aria-labelledby="label_14 label_14_row_0">
-              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                <label id="label_14_row_0"> Knowledge/Skill Set </label>
-              </th>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_0_0" class="form-radio" name="q14_Evaluation of Skills[0]" value="Very Poor" aria-labelledby="label_14_col_0" />
-                <label for="input_14_0_0" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_0_1" class="form-radio" name="q14_Evaluation of Skills[0]" value="Not Satisfactory" aria-labelledby="label_14_col_1" />
-                <label for="input_14_0_1" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_0_2" class="form-radio" name="q14_Evaluation of Skills[0]" value="Average" aria-labelledby="label_14_col_2" />
-                <label for="input_14_0_2" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_0_3" class="form-radio" name="q14_Evaluation of Skills[0]" value="Satisfactory" aria-labelledby="label_14_col_3" />
-                <label for="input_14_0_3" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_0_4" class="form-radio" name="q14_Evaluation of Skills[0]" value="Excellent" aria-labelledby="label_14_col_4" />
-                <label for="input_14_0_4" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-            </tr>
-            <tr class="form-matrix-tr form-matrix-value-tr" role="group" aria-labelledby="label_14 label_14_row_1">
-              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                <label id="label_14_row_1"> Quality of Work </label>
-              </th>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_1_0" class="form-radio" name="q14_Evaluation of Skills[1]" value="Very Poor" aria-labelledby="label_14_col_0" />
-                <label for="input_14_1_0" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_1_1" class="form-radio" name="q14_Evaluation of Skills[1]" value="Not Satisfactory" aria-labelledby="label_14_col_1" />
-                <label for="input_14_1_1" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_1_2" class="form-radio" name="q14_Evaluation of Skills[1]" value="Average" aria-labelledby="label_14_col_2" />
-                <label for="input_14_1_2" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_1_3" class="form-radio" name="q14_Evaluation of Skills[1]" value="Satisfactory" aria-labelledby="label_14_col_3" />
-                <label for="input_14_1_3" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_1_4" class="form-radio" name="q14_Evaluation of Skills[1]" value="Excellent" aria-labelledby="label_14_col_4" />
-                <label for="input_14_1_4" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-            </tr>
-            <tr class="form-matrix-tr form-matrix-value-tr" role="group" aria-labelledby="label_14 label_14_row_2">
-              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                <label id="label_14_row_2"> Attitude </label>
-              </th>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_2_0" class="form-radio" name="q14_Evaluation of Skills[2]" value="Very Poor" aria-labelledby="label_14_col_0" />
-                <label for="input_14_2_0" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_2_1" class="form-radio" name="q14_Evaluation of Skills[2]" value="Not Satisfactory" aria-labelledby="label_14_col_1" />
-                <label for="input_14_2_1" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_2_2" class="form-radio" name="q14_Evaluation of Skills[2]" value="Average" aria-labelledby="label_14_col_2" />
-                <label for="input_14_2_2" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_2_3" class="form-radio" name="q14_Evaluation of Skills[2]" value="Satisfactory" aria-labelledby="label_14_col_3" />
-                <label for="input_14_2_3" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_2_4" class="form-radio" name="q14_Evaluation of Skills[2]" value="Excellent" aria-labelledby="label_14_col_4" />
-                <label for="input_14_2_4" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-            </tr>
-            <tr class="form-matrix-tr form-matrix-value-tr" role="group" aria-labelledby="label_14 label_14_row_3">
-              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                <label id="label_14_row_3"> Productivity and Efficiency </label>
-              </th>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_3_0" class="form-radio" name="q14_Evaluation of Skills[3]" value="Very Poor" aria-labelledby="label_14_col_0" />
-                <label for="input_14_3_0" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_3_1" class="form-radio" name="q14_Evaluation of Skills[3]" value="Not Satisfactory" aria-labelledby="label_14_col_1" />
-                <label for="input_14_3_1" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_3_2" class="form-radio" name="q14_Evaluation of Skills[3]" value="Average" aria-labelledby="label_14_col_2" />
-                <label for="input_14_3_2" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_3_3" class="form-radio" name="q14_Evaluation of Skills[3]" value="Satisfactory" aria-labelledby="label_14_col_3" />
-                <label for="input_14_3_3" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_3_4" class="form-radio" name="q14_Evaluation of Skills[3]" value="Excellent" aria-labelledby="label_14_col_4" />
-                <label for="input_14_3_4" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-            </tr>
-            <tr class="form-matrix-tr form-matrix-value-tr" role="group" aria-labelledby="label_14 label_14_row_4">
-              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                <label id="label_14_row_4"> Reliability and Dependability </label>
-              </th>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_4_0" class="form-radio" name="q14_Evaluation of Skills[4]" value="Very Poor" aria-labelledby="label_14_col_0" />
-                <label for="input_14_4_0" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_4_1" class="form-radio" name="q14_Evaluation of Skills[4]" value="Not Satisfactory" aria-labelledby="label_14_col_1" />
-                <label for="input_14_4_1" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_4_2" class="form-radio" name="q14_Evaluation of Skills[4]" value="Average" aria-labelledby="label_14_col_2" />
-                <label for="input_14_4_2" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_4_3" class="form-radio" name="q14_Evaluation of Skills[4]" value="Satisfactory" aria-labelledby="label_14_col_3" />
-                <label for="input_14_4_3" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_4_4" class="form-radio" name="q14_Evaluation of Skills[4]" value="Excellent" aria-labelledby="label_14_col_4" />
-                <label for="input_14_4_4" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-            </tr>
-            <tr class="form-matrix-tr form-matrix-value-tr" role="group" aria-labelledby="label_14 label_14_row_5">
-              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                <label id="label_14_row_5"> Collaboration and Teamwork </label>
-              </th>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_5_0" class="form-radio" name="q14_Evaluation of Skills[5]" value="Very Poor" aria-labelledby="label_14_col_0" />
-                <label for="input_14_5_0" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_5_1" class="form-radio" name="q14_Evaluation of Skills[5]" value="Not Satisfactory" aria-labelledby="label_14_col_1" />
-                <label for="input_14_5_1" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_5_2" class="form-radio" name="q14_Evaluation of Skills[5]" value="Average" aria-labelledby="label_14_col_2" />
-                <label for="input_14_5_2" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_5_3" class="form-radio" name="q14_Evaluation of Skills[5]" value="Satisfactory" aria-labelledby="label_14_col_3" />
-                <label for="input_14_5_3" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_5_4" class="form-radio" name="q14_Evaluation of Skills[5]" value="Excellent" aria-labelledby="label_14_col_4" />
-                <label for="input_14_5_4" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-            </tr>
-            <tr class="form-matrix-tr form-matrix-value-tr" role="group" aria-labelledby="label_14 label_14_row_6">
-              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                <label id="label_14_row_6"> Communication </label>
-              </th>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_6_0" class="form-radio" name="q14_Evaluation of Skills[6]" value="Very Poor" aria-labelledby="label_14_col_0" />
-                <label for="input_14_6_0" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_6_1" class="form-radio" name="q14_Evaluation of Skills[6]" value="Not Satisfactory" aria-labelledby="label_14_col_1" />
-                <label for="input_14_6_1" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_6_2" class="form-radio" name="q14_Evaluation of Skills[6]" value="Average" aria-labelledby="label_14_col_2" />
-                <label for="input_14_6_2" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_6_3" class="form-radio" name="q14_Evaluation of Skills[6]" value="Satisfactory" aria-labelledby="label_14_col_3" />
-                <label for="input_14_6_3" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_6_4" class="form-radio" name="q14_Evaluation of Skills[6]" value="Excellent" aria-labelledby="label_14_col_4" />
-                <label for="input_14_6_4" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-            </tr>
-            <tr class="form-matrix-tr form-matrix-value-tr" role="group" aria-labelledby="label_14 label_14_row_7">
-              <th scope="row" class="form-matrix-headers form-matrix-row-headers">
-                <label id="label_14_row_7"> Leadership </label>
-              </th>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_7_0" class="form-radio" name="q14_Evaluation of Skills[7]" value="Very Poor" aria-labelledby="label_14_col_0" />
-                <label for="input_14_7_0" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_7_1" class="form-radio" name="q14_Evaluation of Skills[7]" value="Not Satisfactory" aria-labelledby="label_14_col_1" />
-                <label for="input_14_7_1" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_7_2" class="form-radio" name="q14_Evaluation of Skills[7]" value="Average" aria-labelledby="label_14_col_2" />
-                <label for="input_14_7_2" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_7_3" class="form-radio" name="q14_Evaluation of Skills[7]" value="Satisfactory" aria-labelledby="label_14_col_3" />
-                <label for="input_14_7_3" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-              <td class="form-matrix-values">
-                <input type="radio" id="input_14_7_4" class="form-radio" name="q14_Evaluation of Skills[7]" value="Excellent" aria-labelledby="label_14_col_4" />
-                <label for="input_14_7_4" class="matrix-choice-label matrix-radio-label">  </label>
-              </td>
-            </tr>
-          </table>
 
 </form>
 
@@ -325,6 +108,24 @@ include("inc/connect.php");
         }
 
       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
      ?>
 

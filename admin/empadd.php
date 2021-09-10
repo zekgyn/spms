@@ -1,10 +1,10 @@
 <?php
 session_start();
 //Check if user is logged in
-if(!isset($_SESSION['email']) || $_SESSION['email'] !=true) {
-header("location:index.php?action=login&message=You are not Logged In");
-exit();
-}
+// if(!isset($_SESSION['email']) || $_SESSION['email'] !=true) {
+// header("location:index.php?action=login&message=You are not Logged In");
+// exit();
+// }
 include("inc/connect.php");
  ?>
 
@@ -35,8 +35,8 @@ include("inc/connect.php");
   <!-- Right side main-->
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
   <!-- Search one employee-->
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <div class="d-flex justify-content-center flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3">
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search"  name="searchable" placeholder="Search" aria-label="Search">
               <input class="btn btn-outline-primary my-2 my-sm-0"  name="search" type="submit" value="Search"></input>
@@ -55,12 +55,48 @@ include("inc/connect.php");
 
   <!-- Search one employee End-->
 <!-- Add an Employee-->
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-centre pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-center flex-wrap flex-md-nowrap pt-3 pb-2 mb-3 border-bottom">
     <h4><b>Add New Employee</b></h4>
 </div>
+<?php
+if (isset($_POST['submit'])) {
+      $fname=mysqli_real_escape_string($conn, $_POST['firstname']);
+      $lname=mysqli_real_escape_string($conn, $_POST['lastname']);
+      $email=mysqli_real_escape_string($conn, $_POST['email']);
+      $password=mysqli_real_escape_string($conn, $_POST['password']);
+      $phone=mysqli_real_escape_string($conn, $_POST['phone']);
+      $dob=mysqli_real_escape_string($conn, $_POST['birthday']);
+      $address=mysqli_real_escape_string($conn, $_POST['address']);
+      $country=mysqli_real_escape_string($conn, $_POST['country']);
+      $region=mysqli_real_escape_string($conn, $_POST['region']);
+      $gender=mysqli_real_escape_string($conn, $_POST['gender']);
+      $region=trim($region);
+      $password=md5($password);
 
 
-            <div class="col-md-8 order-md-1">
+      $sql="INSERT INTO `employees` (`emp_fname`, `emp_lname`, `emp_gender`, `emp_dob`, `emp_email`, `emp_phone`, `emp_password`, `emp_address`, `emp_country`, `emp_region`)
+            VALUES ('$fname', '$lname', '$gender', '$dob', '$email', '$phone', '$password', '$address', '$country', '$region')";
+                  if (mysqli_query($conn,$sql)) {
+
+                    echo '<div class="alert alert-success alert-dismissible">
+                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                          <strong>Good news!</strong> User added successfully.
+                          </div>';
+                  }
+
+
+                  else {
+                    print ('<div class="alert alert-danger alert-dismissible">
+                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                          <strong>Danger!</strong> Failed to add Employee.<br>'.mysqli_error($conn).'
+                          </div>');
+
+                  }
+      	}
+
+ ?>
+
+            <div class="d-flex justify-content-center flex-wrap flex-md-nowrap pt-3 pb-2 mb-3">
                   <h4 class="mb-3"></h4>
                   <form class="needs-validation" action="" method="post" >
 
@@ -103,13 +139,33 @@ include("inc/connect.php");
                       <label for="username">Password</label>
                       <div class="input-group">
                         <input type="password" class="form-control" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                        title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         <div class="invalid-feedback" style="width: 100%;">
                           Your Password is required.
                         </div>
                       </div>
                     </div>
 
+                    <div class="mb-3">
+                      <label for="address">Department</label>
+                      <select id="" class="custom-select d-block w-100" name="department">
+                        <option value="">Choose...</option>
+                        <?php
+
+                        $get_dept = "select * from departments";
+                        $run_dept = mysqli_query($conn,$get_dept);
+
+                          while ($row_dept = mysqli_fetch_array($run_dept)) {
+
+                            $dept_id = $row_dept[0];
+                            $dept_name = $row_dept[1];
+
+                            echo "<option value='$dept_id'>$dept_name</option>";
+                          }
+                         ?>
+                      </select>
+
+                    </div>
 
                         <div class="mb-3">
                           <label for="email">Date Of Birth <span class="text-muted"></span></label>
@@ -181,41 +237,6 @@ include("inc/connect.php");
                     <hr class="mb-4">
                     <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit">Add User</button>
                   </form>
-
-<?php
-if (isset($_POST['submit'])) {
-      $fname=mysqli_real_escape_string($conn, $_POST['firstname']);
-      $lname=mysqli_real_escape_string($conn, $_POST['lastname']);
-      $email=mysqli_real_escape_string($conn, $_POST['email']);
-      $password=mysqli_real_escape_string($conn, $_POST['password']);
-      $dob=mysqli_real_escape_string($conn, $_POST['birthday']);
-      $address=mysqli_real_escape_string($conn, $_POST['address']);
-      $country=mysqli_real_escape_string($conn, $_POST['country']);
-      $region=mysqli_real_escape_string($conn, $_POST['region']);
-      $gender=mysqli_real_escape_string($conn, $_POST['gender']);
-      $region=trim($region);
-$password=md5($password);
-      $sql="INSERT INTO `employees` (`emp_fname`, `emp_lname`, `emp_gender`, `emp_dob`, `emp_email`, `emp_password`, `emp_address`, `emp_country`, `emp_region`)
-            VALUES ('$fname', '$lname', '$gender', '$dob', '$email', '$password', '$address', '$country', '$region')";
-                  if (mysqli_query($conn,$sql)) {
-                    echo '<div class="alert alert-success alert-dismissible">
-                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                          <strong>Good news!</strong> User added successfully.
-                          </div>';
-                  }
-
-
-                  else {
-                    print ('<div class="alert alert-danger alert-dismissible">
-                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                          <strong>Danger!</strong> Failed to add Employee.<br>'.mysqli_error($conn).'
-                          </div>');
-
-                  }
-      	}
-
- ?>
-
                 </div>
                 <!-- Add Employee End-->
       </main>
